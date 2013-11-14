@@ -190,10 +190,11 @@
         }
         @media screen and (max-width: 1000px) {
           .book-lists {
-            width: 490px;
+            width: 480px;
           }
           .book-list {
-            width: 480px;
+            width: 100%;
+            padding: 0;
           }
         }
         @media screen and (max-width: 500px) {
@@ -201,7 +202,8 @@
             width: auto;
           }
           .book-list {
-            width: auto;
+            display: block;
+            float: none;
           }
           polymer-ui-card {
             display: block;
@@ -264,7 +266,7 @@
           opacity: 1;
         }
         #scrim {
-          background-color: rgba(128, 128, 128, 0.3);
+          background-color: rgba(128, 128, 128, 0.5);
           z-index: 1;
         }
         polymer-ui-toolbar#toolbar {
