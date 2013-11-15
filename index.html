@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Book Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <script src="components/platform/platform.js"></script>
   <link rel="import" href="components/polymer-jsonp/polymer-jsonp.html">
   <link rel="import" href="components/polymer-selector/polymer-selector.html">
@@ -72,6 +75,8 @@
     <template>
       <link rel="stylesheet" href="components/polymer-flex-layout/polymer-flex-layout.css">
       <style>
+        :host {
+        }
         .thumbnail {
           width: 128px;
           height: 195px;
@@ -101,12 +106,12 @@
         }
         .link-icon-container {
           position: relative;
+          height: 24px;
         }
-        .link-icon-container > * {
+        .link-icon-container a {
           position: absolute;
           top: 0;
           right: 0;
-          z-index: 1;
         }
         polymer-ui-ratings {
           pointer-events: none;
@@ -248,6 +253,14 @@
   <polymer-element name="gb-app">
     <template>
       <style>
+        :host {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          -webkit-touch-callout: none;
+        }
         #sidebar {
           width: 200px;
           -webkit-transition: left ease-in .1s;
@@ -290,6 +303,7 @@
           display: block;
           background: #f2f2f2;
           overflow: auto;
+          -webkit-overflow-scrolling: touch;
         }
         .loading-icon {
           display: none;
@@ -319,7 +333,7 @@
         <div flex></div>
         <polymer-ui-field hidden?="{{viewSelected}}">
           <polymer-ui-icon icon="search" theme="polymer-ui-light-theme"></polymer-ui-icon>
-          <input placeholder="Search Books" value="{{query}}" flex x-webkit-speech on-change="{{search}}">
+          <input id="input" placeholder="Search Books" value="{{query}}" flex x-webkit-speech on-change="{{search}}">
         </polymer-ui-field>
         <polymer-ui-menu-button selected="{{bookTypeSelected}}" halign="right" icon="filter" theme="polymer-ui-light-theme" hidden?="{{viewSelected}}">
           <polymer-ui-menu-item name="all" label="All"></polymer-ui-menu-item>
@@ -340,8 +354,8 @@
       <div id="sidebar" offscreen="left" theme="polymer-ui-dark-icon">
         <polymer-ui-toolbar><div class="sidebar-title">Books</div></polymer-ui-toolbar>
         <polymer-ui-menu selected="{{viewSelected}}" on-polymer-activate="{{menuActivate}}" selectedClass="sidebar-menu-selected">
-          <polymer-ui-menu-item label="Search" xicon="search"></polymer-ui-menu-item>
-          <polymer-ui-menu-item label="Favorites" xicon="favorite"></polymer-ui-menu-item>
+          <polymer-ui-menu-item label="Search"></polymer-ui-menu-item>
+          <polymer-ui-menu-item label="Favorites"></polymer-ui-menu-item>
         </polymer-ui-menu>
       </div>
       
@@ -391,6 +405,7 @@
         },
         search: function() {
           this.loading = true;
+          this.$.input.blur();
           this.$.bookSearch.go();
         },
         gotBooks: function(e, detail) {
