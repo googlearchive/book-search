@@ -1,0 +1,23 @@
+{
+  "name": "book-search",
+  "private": true,
+  "dependencies": {
+    "platform": "Polymer/platform#master",
+    "polymer-jsonp": "Polymer/polymer-jsonp#master",
+    "polymer-selector": "Polymer/polymer-selector#master",
+    "polymer-grid-layout": "Polymer/polymer-grid-layout#master",
+    "polymer-flex-layout": "Polymer/polymer-flex-layout#master",
+    "polymer-localstorage": "Polymer/polymer-localstorage#master",
+    "polymer-ui-toolbar": "Polymer/polymer-ui-toolbar#master",
+    "polymer-ui-icon": "Polymer/polymer-ui-icon#master",
+    "polymer-ui-icon-button": "Polymer/polymer-ui-icon-button#master",
+    "polymer-ui-field": "Polymer/polymer-ui-field#master",
+    "polymer-ui-collapsible": "Polymer/polymer-ui-collapsible#master",
+    "polymer-ui-card": "Polymer/polymer-ui-card#master",
+    "polymer-ui-ratings": "Polymer/polymer-ui-ratings#master",
+    "polymer-ui-menu-button": "Polymer/polymer-ui-menu-button#master",
+    "polymer-ui-menu-item": "Polymer/polymer-ui-menu-item#master",
+    "polymer-ui-menu": "Polymer/polymer-ui-menu#master",
+    "polymer-ui-pages": "Polymer/polymer-ui-pages#master"
+  }
+}
