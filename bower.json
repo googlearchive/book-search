@@ -19,6 +19,6 @@
     "polymer-ui-menu-item": "Polymer/polymer-ui-menu-item#master",
     "polymer-ui-menu": "Polymer/polymer-ui-menu#master",
     "polymer-ui-pages": "Polymer/polymer-ui-pages#master",
-    "polymer-ui-base-css": "Polymer/polymer-ui-base-css#master"
+    "polymer-ui-base": "Polymer/polymer-ui-base#master"
   }
 }
